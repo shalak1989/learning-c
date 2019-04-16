@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <unistd.h>
 /* order of args will be the search word then the file output name.
 remember argv[0] is the name of the actual program getting ran 
 
