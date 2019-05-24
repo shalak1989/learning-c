@@ -10,9 +10,17 @@ run with:
 You connect the programs with the pipe, this connects two processes together
 as if they were one program?
 
-so the data will be first filtered through the bermuda program and then
-put into the geo2json program. The gpsdata.csv file provides the data and then
-it flows to the output.json
+so the data will be first filtered through the bermuda program and 
+then put into the geo2json program. The gpsdata.csv file provides 
+the data and then it flows to the output.json.
+
+I believe this happens one line at a time so:
+
+1) a line from gpsdata.csv is fed into bermuda.c
+2) bermuda.c prints output which is received by geo2json.c
+3) geo2json.c prints put which is received by output.json
+
+Remember 
 
 
 The programs run at the same time and when one produces input the other can 

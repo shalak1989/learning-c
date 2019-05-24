@@ -1,5 +1,17 @@
 data=[
-{latitude: 27.123455, longitude: -68.135681, info: ''Speed = 20,'},'},
-{latitude: 29.124567, longitude: -70.151672, info: ''Speed = 24'},'},
+{latitude: 42.363453, longitude: -71.063454, info: 'Speed = 21,'},
+{latitude: 45.363453, longitude: -90.063454, info: 'Speed = 25,'},
+{latitude: 52.363453, longitude: -41.063457, info: 'Speed = 30,'},
+{Invalid latitude: 523.363464, Invalid longitude: -41.063457, info: 'Speed = 30,'},
+{latitude: -52.363453, longitude: -141.063461, info: 'Speed = 30,'},
+{Invalid latitude: -423.363464, Invalid longitude: -141.063461, info: 'Speed = 30,'},
+{latitude: 27.123455, longitude: -63.135677, info: 'Speed = 20,'},
+{latitude: 35.124565, longitude: -70.151672, info: 'UFO,'},
+{latitude: 27.123455, longitude: -68.135681, info: 'Disappearance,'},
+{latitude: 29.124567, longitude: -70.151672, info: 'Speed = 24'},
+{latitude: 35.124565, longitude: -75.151672, info: 'UFO,'},
+{latitude: 27.123455, longitude: -69.135681, info: 'Disappearance,'},
+{latitude: 27.123455, longitude: -69.135681, info: 'Elvis,'},
+{latitude: 35.124565, longitude: -75.151672, info: 'Elvis,'},
 
 ]
