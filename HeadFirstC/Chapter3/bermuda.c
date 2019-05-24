@@ -37,7 +37,8 @@ int main()
     float longitude = 0.00;
     char info[80];
 
-    //Remember you need the address operator, & to read data to the memory address
+    /*Remember you need the address operator, & to read data to the memory 
+    address*/
     while (scanf("%f, %f, %79[^\n]", &latitude, &longitude, &info) == 3)
     {
         if (IsDataInTheBermudaTriange(latitude, longitude) == 0)

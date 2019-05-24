@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 /*Run this with redirection in command line with < (output) operator, 
-so ./pocket_code < gpsdata.csv
+so ./geo2json < gpsdata.csv
 
 Use the > (input) operator in command line to redirect the input
 to a file called output.json. This will read in info from gpsdata.csv
 into the file output.json
 
-./pocket_code < gpsdata.csv > output.json
+./geo2json < gpsdata.csv > output.json
 */
 
 /* can also run by combining with bermuda.c:
