@@ -1,0 +1,73 @@
+- casting in C:
+
+int x = 100;
+float z = (float)x / 10; -- compiler will automatically cast 10 to a float
+
+- unsigned numbers can store numbers twice as big as their signed versions
+
+- there is a signed keyword but you almost never need int
+
+EX:
+unsigned int x = 10;
+
+- you can use long before other math types like double to make it 
+even bigger:
+
+EX:
+long double d;
+
+- you can put a .0 on the end of a division problem to make it a float
+
+EX:
+float number = 1 + 10 / 2.0
+
+- different data types can be different sizes on different platforms
+there are headers to help you:
+
+EX:
+
+#include <limits.h> - contains values for integer types like int/char
+#include <float.h> - has values for floats/doubles
+int main()
+{
+    printf("The value of INT_MAX is %i\n", INT_MAX)
+    //also INT_MIN, FLT_MAX, FLT_MIN
+
+    sizeof(float) will return number of bytes a data type occupies
+
+    also can find char/double/long
+
+    CHAR_MAX, SHORT_MIN, etc
+}
+
+- the compiler will try to infer the return type of a function before
+it finds a definition. This can cause compile time errors even if 
+functions are defined correctly.
+
+This is where header files come in and allow you to declare the function
+before its defined. Basically like an "interface" so the C compiler
+understands return types and function signatures ahead of time.
+
+you can also just put these at the top of a .c file. However it is 
+better practice to use headers
+
+- **IMPORTANT**
+if the compiler finds a function it hasn't heard of, it assumes it will
+be an int
+
+- If you put a comment above a function declaration in the source 
+or header file it will create a docstring, 
+at least in many IDEs (including VSCode). I think the header file comment
+will override the source file though.
+
+From my current reading it seems best to keep function comments in
+the source file and NOT the header. Long compilation times could result
+otherwise
+
+- if you need to share variables with other files declare them as 
+external in the header. This is generally a bad idea.
+
+EX:
+extern int passcode;
+
+- Look into autoconf to automate makefiles
