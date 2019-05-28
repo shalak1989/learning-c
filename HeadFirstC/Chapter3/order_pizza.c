@@ -7,7 +7,8 @@ int main(int argc, char *argv[])
     int thick = 0;
     int count = 0;
     char ch;
-
+    for (int count = 0; count < argc; count++)
+        puts(argv[count]);
     //This will loop through 
     while ((ch = getopt(argc, argv, "d:t")) != EOF)
         switch (ch)

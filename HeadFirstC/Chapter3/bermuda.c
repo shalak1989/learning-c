@@ -1,14 +1,15 @@
 #include <stdio.h>
 
 /*Run this with pipe command in command line with | (pipe) operator.
-This will feed the data from bermuda into geo2json via the output stream
+This will feed the data from bermuda into geo2json via the output 
+stream
 
 run with:
 
 (./bermuda | ./geo2json) < gpsdata.csv > output.json
 
-You connect the programs with the pipe, this connects two processes together
-as if they were one program?
+You connect the programs with the pipe, this connects two processes 
+together as if they were one program?
 
 so the data will be first filtered through the bermuda program and 
 then put into the geo2json program. The gpsdata.csv file provides 

@@ -9,7 +9,7 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/Chapter3/order_pizza.exe",
-      "args": [],
+      "args": ["-d", "-t", "Anchovies", "Bacon", "Pepperoni"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
