@@ -1,0 +1,56 @@
+- structs are passed by value into functions. If you want to update
+an existing struct vs copying the value:
+
+EX:
+void exampleFunction(struct ExampleStruct *t) //*t is a pointer
+
+//You then pass the address of the struct to the function:
+EX:
+exampleFunction(&t);
+
+Ex:
+
+void happy_birthday(turtle *t){
+    (*t).age = (*t).age + 1;
+    printf("Happy birthday %s! you are now %i years old!\n"),
+            (*t).name, (*t).age;
+}
+
+- (*t).age vs *t.age
+EX:
+(*t).age is the age of turtle pointed to by t.
+
+***NOTE *t.age is actually invalid C syntax***
+*t.age is the contents of the memory location given by t.age
+
+shorthand:
+(use the below instead of (*t).age)
+t->age means (*t).age
+
+- Unions
+
+A union is different than a struct. It will use memory space
+for just one of the fields in its definition. 
+
+A struct will store a place in memory for every single field.
+
+EX: struct
+struct example {
+    char *name; //memory allocated for this field
+    int age; //memory allocated for this field
+    float weight; //memory allocated for this field
+}
+
+EX: union
+
+A union will only allocate space for the biggest possible member. 
+
+All members are stored in the same space.
+
+union example {
+    char *name; //memory allocated for this if bigger
+    int age; //memory allocated for this if bigger
+    float weight; //memory allocated for this if bigger
+}
+
+for more see union_example.c
