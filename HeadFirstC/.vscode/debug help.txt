@@ -1,3 +1,5 @@
+{% comment %} 
+
 use this to help set up the json file:
 
 https://github.com/Microsoft/vscode-cpptools/issues/55
@@ -8,4 +10,5 @@ https://www.rapidtables.com/code/linux/gcc/gcc-g.html
 
 you need to use gdb on windows and id say linux as //www.rapidtables.com/code/linux/gcc/gcc
 
-Keep in mind these configs probably need to switch depending on which OSai
+Keep in mind these configs probably need to switch depending on which 
+OS you are using

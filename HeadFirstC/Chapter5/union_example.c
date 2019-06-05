@@ -54,6 +54,14 @@ int main()
 
         If you only need one of many possible data types, use a union, otherwise
         stick with a struct.
+
+        See useful stackoverflow:
+
+        https://stackoverflow.com/questions/346536/difference-between-a-structure-and-a-union
+
+        //Not all languages allow designated initializers, see
+        HeadFirstC Location 3910 (kindle) in chapter 5
+    
     */
 
     union Quantity e = {.count = 255}; //for short

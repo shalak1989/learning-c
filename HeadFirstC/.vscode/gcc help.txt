@@ -1,0 +1,7 @@
+{% comment %} 
+I would recommend turning on compiler warnings, extra, and set Werror 
+to force a fix:
+
+gcc -Wall -Wextra -Werror 
+
+{% endcomment %}

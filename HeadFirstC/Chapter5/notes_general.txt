@@ -1,3 +1,5 @@
+{% comment %} 
+
 - structs are passed by value into functions. If you want to update
 an existing struct vs copying the value:
 
@@ -54,3 +56,9 @@ union example {
 }
 
 for more see union_example.c
+
+- Unions do not make it easy to know what value is being stored and 
+what value is not. We need a way of tracking values stored in a union_example.c
+
+One trick is to create an enum
+

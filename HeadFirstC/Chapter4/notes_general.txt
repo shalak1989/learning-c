@@ -1,3 +1,5 @@
+{% comment %} 
+
 - casting in C:
 
 int x = 100;
