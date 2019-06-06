@@ -1,0 +1,30 @@
+{% comment %}
+
+Linking multiple structs together is how you make large complex data
+structures. You link them with struct pointers typically.
+
+Will also be learning about linked lists.
+
+To store a flexible amount of data you need something more extensible
+than an array. You need a linked list.
+
+Linked list is an abstract data structure. It can be used to store a
+lot of different kinds of data.
+
+A linked list stores a piece of data and a "link" to another piece of
+data. As long as you know where the list starts you can travel along
+the list of links.
+
+Linked lists allows very quick inserting of data. You need to create
+a recursive structure.
+
+In C a recursive struct is a struct that contains a link to another
+struct of the same type. Recursive structs contain pointers to the
+other structures of the same type.
+
+See linked_list_example.c
+
+in C99/C11 you can declare local function variables in the middle of
+code. In other versions though all must be declared at the top of the
+function
+{% endcomment %}

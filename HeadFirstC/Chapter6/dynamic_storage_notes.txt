@@ -1,0 +1,46 @@
+{% comment %}
+
+Most memory up to this point as been the stack.
+
+This is used to store local variables.
+
+We need dynamic memory allocation at run time in the real world because
+things are often not concretely defined.
+
+malloc() is a function used in C to tell how much memory you need,
+and it asks the operating system to set how much memory is needed on
+the heap.
+
+the malloc function then returns a pointer to the new heap space.
+
+Because malloc allows you to hold memory though, you need to manually
+release it as well once you are done with it. If not you will have
+memory leaks.
+
+the free() function does this.
+
+EX: #include <stdlib.h>
+
+malloc(sizeof(island)) - this means give me enough space to store a 
+single island struct
+
+sizeof tells you how many bytes a data type occupies on your system.
+You can use this for any data type. 
+
+the pointer malloc returns is general purpose: type void*.
+
+EX:
+
+island *p = malloc(sizeof(island)) - create space, store address in 
+variable
+
+This pointer can be used as long as you like but you need to free it 
+later with free().
+
+free() needs the address in memory that malloc() created.
+
+EX:
+
+free(p);
+
+see dynamic_memory_example.c
