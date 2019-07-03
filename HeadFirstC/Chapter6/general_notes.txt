@@ -27,4 +27,14 @@ See linked_list_example.c
 in C99/C11 you can declare local function variables in the middle of
 code. In other versions though all must be declared at the top of the
 function
+
+-You can debug memory leaks with valgrind
+
+Valgrind will replace malloc/free calls in your code with its own,
+this will allow it to find where memory wasn't freed
+
+you need to compile with debug information so use the -g flag with gcc
+
+gcc -g
+
 {% endcomment %}

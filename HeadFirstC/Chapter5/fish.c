@@ -25,7 +25,6 @@ struct Fish
     struct Preferences care;
 };
 
-
 void catalog(struct Fish fish)
 {
     printf("%s is a %s with %i teeth. He is %i\n years old.\n",

@@ -1,0 +1,58 @@
+{% comment %} 
+
+The below file output is for example only:
+
+1) Read the errors like a stack trace, for example on
+Error #2, Main, which called create, which had a call to
+strdup inside of it on line 23
+
+2) you can simply run with drmemory nameofProgram.exe
+
+3) run with drmemory locationOfExe. If you are in the exe directory in
+command line you can just type: drmemory example.exe
+
+Dr. Memory version 2.1.0 build 1 built on Mar 18 2019 00:02:08
+Windows version: WinVer=105;Rel=1803;Build=17134;Edition=Core
+Dr. Memory results for pid 6668: "a.exe"
+Application cmdline: "a.exe"
+Recorded 117 suppression(s) from default C:\Program Files (x86)\Dr. Memory\bin\suppress-default.txt
+
+Error #1: LEAK 2 direct bytes 0x01320c98-0x01320c9a + 0 indirect bytes
+# 0 replace_malloc               [d:\drmemory_package\common\alloc_replace.c:2577]
+# 1 msvcrt.dll!_strdup   
+# 2 .text                        [../../../src/gcc-8.2.0/libgcc/config/i386/cygwin.S:164]
+# 3 __mingw_glob                 [../../../src/gcc-8.2.0/libgcc/config/i386/cygwin.S:164]
+# 4 _setargv                     [C:\repos\learning-c\HeadFirstC\CHapter6/memory_leak_example.c:97]
+# 5 .text
+# 6 mainCRTStartup
+# 7 ntdll.dll!RtlAreBitsSet     +0x87     (0x773141c8 <ntdll.dll+0x641c8>)
+# 8 ntdll.dll!RtlAreBitsSet     +0x57     (0x77314198 <ntdll.dll+0x64198>)
+
+Error #2: LEAK 19 direct bytes 0x01320d88-0x01320d9b + 0 indirect bytes
+# 0 replace_malloc               [d:\drmemory_package\common\alloc_replace.c:2577]
+# 1 msvcrt.dll!_strdup   
+# 2 create                       [C:\repos\learning-c\HeadFirstC\CHapter6/memory_leak_example.c:23]
+# 3 main                         [C:\repos\learning-c\HeadFirstC\CHapter6/memory_leak_example.c:48]
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total GDI usage error(s)
+      0 unique,     0 total handle leak(s)
+      0 unique,     0 total warning(s)
+      2 unique,     2 total,     21 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      7 unique,     7 total,   4394 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: C:\Users\James\AppData\Roaming\Dr. Memory\DrMemory-a.exe.6668.000\results.txt
+
+{% endcomment %}

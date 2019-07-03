@@ -1,0 +1,15 @@
+{% comment %} 
+
+Valgrind is already installed on linux.
+
+With the windows 10 anniversary update windows has Ubuntu as a 
+subsystem. You must have Windows 10 version 1607 (Build 14393.187) or 
+above
+
+http://www.albertgao.xyz/2016/09/28/how-to-use-valgrind-on-windows/
+
+https://stackoverflow.com/questions/40355474/valgrind-does-not-work-with-wsl
+
+Interesting custom approach to finding memory leaks:
+
+https://stackoverflow.com/questions/9074229/detecting-memory-leaks-in-c-programs
