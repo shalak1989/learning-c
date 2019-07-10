@@ -1,0 +1,32 @@
+You can create function pointers in C to allow you to pass functions
+as parameters.
+
+See example1.c for a lesson on how to correctly pass an array's size to 
+a function and pitfalls for doing it incorrectly.
+
+example of function pointer:
+
+
+
+
+
+int go_to_warp_speed(int speed)
+{
+
+}
+
+int (*warp_fn)(int);
+warp_fn = go_to_warp_speed; --This will create a variable that can store the address
+of the go_to_warp_speed() function
+
+warp_fn(4) --This is just like calling go_to_warp_speed(4)
+
+You need to tell C the return type and parameters that are taken when you 
+make these pointers
+
+
+so the syntax is ReturnType (*NameOfPointerVariable)(ParameterType1)(ParameterType2)(Etc..)
+
+--In windows at least, stricmp compares two strings for case sensitivity
+
+--See example1.c for how to define a function parameter to take a function
