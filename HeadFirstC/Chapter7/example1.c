@@ -4,10 +4,11 @@
 
 /*
     by simply adding a parameter that is a function pointer you can pass functions
-    first return type, then name you want pointer to have, then each parameter type
-    (paramtype1 *)(paramtype2 *)
+    first return type, then name you want pointer to have, 
+    then each parameter's type in the same ()
+    (param1, param2)
 
-    ex: int (*match)(char *)(int)
+    ex: int (*match)(char *, int)
 */
 void find(char *ADS[], int size, int (*match)(char *))
 {
@@ -32,6 +33,11 @@ void find(char *ADS[], int size, int (*match)(char *))
         // {
         //     printf("%s\n", ADS[i]);
         // }
+
+        /*
+        could call the match function with (*match)(ADS[i]) but C knows
+        what you mean by match(ADS[i])
+        */
         if (match(ADS[i]))
         {
             printf("%s\n", ADS[i]);

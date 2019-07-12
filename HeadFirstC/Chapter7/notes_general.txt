@@ -25,8 +25,21 @@ You need to tell C the return type and parameters that are taken when you
 make these pointers
 
 
-so the syntax is ReturnType (*NameOfPointerVariable)(ParameterType1)(ParameterType2)(Etc..)
+so the syntax is ReturnType (*NameOfPointerVariable)(ParaType1, ParamType2)
 
 --In windows at least, stricmp compares two strings for case sensitivity
 
 --See example1.c for how to define a function parameter to take a function
+
+
+C has a sort function called qsort(). Qsort uses function pointers to help
+decide what to sort by.
+
+qsort(void *array, --array pointer
+      size_t length, -- the length of the array
+      size_t item_size, - the size of each element in the array
+      int (*compar)(const void *, const void *));
+      --*compar is a pointer to a function that compares two items in the 
+      array
+
+--see qsort_example.c for more info and usage cases
