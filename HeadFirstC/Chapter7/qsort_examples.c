@@ -49,6 +49,11 @@ struct rectangle
     int height;
 };
 
+/*
+    Seems like it would be better to make sure that you ONLY use this 
+    with an explicit array of rectangle structs instead of letting the 
+    pointer assign themselves to width/height with no direction
+ */
 int compare_areas(const void *a, const void *b)
 {
 
@@ -58,11 +63,18 @@ int compare_areas(const void *a, const void *b)
     int area_a = (ra->width * ra->height);
     int area_b = (rb->width * rb->height);
     count++;
-    printf("count is: %i\n", count);
-    printf("a height: %i\n", ra->height);
-    printf("a width: %i\n\n", ra->width);
-    // printf("a: %i\n", *(int *)a);
-    // printf("b: %i\n\n", *(int *)b);
+
+    return area_a - area_b;
+}
+
+int compare_rectangle_areas(const void *a, const void *b)
+{
+    struct rectangle *ra = (struct rectangle *)a;
+    struct rectangle *rb = (struct rectangle *)b;
+
+    int area_a = (ra->width * ra->height);
+    int area_b = (rb->width * rb->height);
+
     return area_a - area_b;
 }
 
@@ -81,13 +93,36 @@ int main()
     zero - if the two values are equal
     */
 
-    int scores[] = {543, 323, 32, 554, 11, 3, 112, 45};
-    int size = sizeof(scores) / sizeof(scores[0]);
+    int scores[] = {543, 323, 32, 554, 11, 3, 112};
 
-    qsort(scores, size, sizeof(scores[0]), compare_areas);
+    struct rectangle rectangles[] =
+        {
+            {
+                .width = 8,
+                .height = 2,
+            },
+            {.width = 5, .height = 2},
+            {.width = 6, .height = 2},
+        };
+
+    int size = sizeof(scores) / sizeof(scores[0]);
+    int sizeOfRectangles = sizeof(rectangles) / sizeof(rectangles[0]);
+
+    qsort(scores, size, sizeof(scores[0]), compare_scores);
+
+    qsort(rectangles, sizeOfRectangles, sizeof(rectangles[0]), compare_rectangle_areas);
+
+    printf("Scores qsort\n");
 
     for (int i = 0; i < size; i++)
     {
         printf("%i\n", scores[i]);
+    }
+
+    printf("\n\n");
+    printf("Rectangles\n");
+    for (int i = 0; i < sizeOfRectangles; i++)
+    {
+        printf("height: %i and width: %i\n", rectangles[i].height, rectangles[i].width);
     }
 }
