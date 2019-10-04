@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 //void pointer can store a pointer to anything
 int count = 0;
 
@@ -78,6 +78,20 @@ int compare_rectangle_areas(const void *a, const void *b)
     return area_a - area_b;
 }
 
+int compare_names(const void *a, const void *b)
+{
+    char **sa = (char **)a;
+    char **sb = (char **)b;
+
+    return strcmp(*sa, *sb);
+}
+
+int compare_names_desc(const void *a, const void *b)
+{
+    //could have used return -compare_names(a, b);
+    return compare_names(b, a);
+}
+
 int main()
 {
     /*
@@ -105,12 +119,27 @@ int main()
             {.width = 6, .height = 2},
         };
 
+    char *names[] = {"Karen", "Mark", "Brett", "Molly"};
+
     int size = sizeof(scores) / sizeof(scores[0]);
     int sizeOfRectangles = sizeof(rectangles) / sizeof(rectangles[0]);
+    int sizeOfNames = sizeof(names) / sizeof(names[0]);
 
-    qsort(scores, size, sizeof(scores[0]), compare_scores);
+    qsort(scores, size, sizeof(scores[0]), compare_scores_desc);
 
     qsort(rectangles, sizeOfRectangles, sizeof(rectangles[0]), compare_rectangle_areas);
+
+    qsort(names, sizeOfNames, sizeof(names[0]), compare_names);
+
+    
+    printf("\n\n");
+    printf("Names sorted\n");
+    for (int i = 0; i < sizeOfNames; i++)
+    {
+        printf("%s\n", names[i]);
+    }
+
+    //qsort(names, sizeOfNames, sizeof(names[0]), compare_names_desc);
 
     printf("Scores qsort\n");
 
@@ -124,5 +153,13 @@ int main()
     for (int i = 0; i < sizeOfRectangles; i++)
     {
         printf("height: %i and width: %i\n", rectangles[i].height, rectangles[i].width);
+    }
+
+
+    printf("\n\n");
+    printf("Names sorted desc\n");
+    for (int i = 0; i < sizeOfNames; i++)
+    {
+        printf("%s\n", names[i]);
     }
 }
