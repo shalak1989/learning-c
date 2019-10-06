@@ -43,3 +43,17 @@ qsort(void *array, --array pointer
       array
 
 --see qsort_example.c for more info and usage cases
+
+
+/*
+
+      Function vs Macro
+
+      A macro is used to rewrite code before its compiled. In this chapter va_start
+      etc... are macros. These contain instructions that the preprocessor uses to generate
+      code inside your program.
+
+      So macros get replaced with other code by C. Preprocessor runs just before
+      compilation.
+
+*/
