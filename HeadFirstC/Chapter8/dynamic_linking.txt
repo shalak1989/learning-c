@@ -1,0 +1,40 @@
+Dynamic linking happens at run time as opposed to compile time with static 
+linking.
+
+DYnamic libraires are similar to the .o object files but they aren't exactly 
+the same. They can be built from several .o files but the object files are
+properly linked together in a dynamic library to form a single piece of object
+code.
+
+To convert the hfcal.c code into a dynamic library:
+
+1) begin by compiling it into a .o files
+
+gcc -I/header_files -fPIC -c hfcal.c -o hfcal.o
+(may get told this is unnecessary on windows becuase it does it for you)
+
+-c means DON'T LINK FILE on creation
+
+same as before with new -fPIC flag. This flag tells gcc you want to create
+position independent code. This code can be moved around in memory.
+
+dynamic link libaries are also known as DLL or .dll extension. On unix they are
+shared object files (.so).
+
+2) gcc -shared hfcal.o -o my_lib/hfcal.dll 
+
+(tells gcc you want to convert a .o object to dynamic lib)
+
+When a compiler makes a dynamic library it will store the name of the lib inside
+the file. This means you should not change the file name later.
+
+NOTE: on some older mac systems -shared isn't available, use -dynamiclib
+
+Now you can build the elliptical program like this:
+
+gcc -I\header_files -c elliptical.c -o elliptical.o
+gcc elliptical.o -L\my_lib -lhfcal -o elliptical
+
+These commands are the same but compile will work differently. Because the 
+libs dynamic, the compiler won't include the lib code into the exe. Instead it
+will insert some placeholder code that will track down and link it at runtime
